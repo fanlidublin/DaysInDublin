@@ -11,8 +11,6 @@ This repository created by me aims to record and restore the algorithms and prog
 ## Catalogue
 - [HackerRank Java Solutions](https://github.com/fanlidublin/DaysInDublin/tree/master/HackerRank%20Java%20Solutions)
 
-- [Machine Learning in Action](https://github.com/fanlidublin/DaysInDublin/tree/master/Machine%20Learning%20in%20Action)
-
 - [Python for Beginners](https://github.com/fanlidublin/DaysInDublin/tree/master/Python%20for%20Beginners)
 
 - [The Interlligence of Math](https://github.com/fanlidublin/DaysInDublin/tree/master/The%20Interlligence%20of%20Math)
