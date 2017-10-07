@@ -9,7 +9,7 @@ This repository created by me aims to record and restore the algorithms and prog
 
 
 ## Catalogue
-- [Daily or Marvelously]()
+- [Daily or Marvelously](https://github.com/fanlidublin/DaysInDublin/tree/master/Daily%20or%20Marvelously)
 
 - [D3_Examples]()
 
