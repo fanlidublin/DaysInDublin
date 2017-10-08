@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Selecting circles</title>
+</head>
+
+<style>
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+circle {
+    fill: #ddd;
+}
+
+circle.selected {
+    stroke: #555;
+    stroke-width: 2px;
+}
+</style>
+
+<body>
+    <div class="title"></div>
+    <svg width="760" height="140">
+        <g transform="translate(70, 70)">
+            <circle r="40" />
+            <circle r="40" cx="120" />
+            <circle r="40" cx="240" />
+            <circle r="40" cx="360" />
+            <circle r="40" cx="480" />
+        </g>
+    </svg>
+
+    <form>
+        <input class="robot-checkbox" type="checkbox"> A checkbox</input>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script>
+
+// Change colour of first circle
+d3.select('circle')
+    .style('fill', 'orange')
+
+// Change radius of all circles
+d3.selectAll('circle')
+    .attr('r', 50);
+
+// Add .selected class to 3rd circle
+d3.select('circle:nth-child(3)')
+    .classed('selected', true);
+
+// Set checked property of checkbox
+d3.select('input.robot-checkbox')
+    .property('checked', false);
+
+// Set text on .title element
+d3.select('.title')
+    .text('D3 in Depth selection example')
+    </script>
+</body>
+</html>

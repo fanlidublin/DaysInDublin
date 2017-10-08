@@ -1,0 +1,39 @@
+{
+  "nodes":[
+    {"name":"John","group":1},
+    {"name":"Paul","group":1},
+    {"name":"George","group":1},
+    {"name":"Ringo","group":1},
+    {"name":"Mick","group":2},
+    {"name":"Keith","group":2},
+    {"name":"Ronnie","group":2},
+    {"name":"Charlie","group":2},
+    {"name":"Robert","group":3},
+    {"name":"Jimmy","group":3},
+    {"name":"JohnPaul","group":3},
+    {"name":"John","group":3},
+    {"name":"Bono","group":4},
+    {"name":"Edge","group":4},
+    {"name":"Larry","group":4},
+    {"name":"Adam","group":4}
+  ],
+  "links":[
+    {"source":1,"target":0,"value":1},
+    {"source":2,"target":0,"value":8},
+    {"source":3,"target":0,"value":10},
+    {"source":4,"target":0,"value":6},
+    {"source":2,"target":1,"value":8},
+    {"source":3,"target":1,"value":10},
+    {"source":4,"target":1,"value":6},
+    {"source":3,"target":2,"value":10},
+    {"source":4,"target":0,"value":10} 
+    {"source":4,"target":1,"value":6},
+    {"source":5,"target":4,"value":6},
+    {"source":6,"target":4,"value":7}, 
+    {"source":7,"target":4,"value":9}, 
+    {"source":6,"target":5,"value":7}, 
+    {"source":7,"target":5,"value":9}, 
+    {"source":7,"target":6,"value":11} 
+     
+  ]
+}

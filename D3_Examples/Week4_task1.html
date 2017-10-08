@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="tas-com">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3: A First Data Join in D3</title>
+    <link href="./themes/prism.css" rel="stylesheet" />
+    <link href="./themes/tas_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+    <script src="./lib/prism.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <h1>Week4 Pratice -- Fan Li</h1>
+    <h2>Task1</h2>
+    <div class="demo">
+        <script type="text/javascript">
+        //Define a simple dataset
+        var dataset = [4, 11, 22, 17, 2, 25, 16];
+
+        //Create SVG element
+        svg = d3.select("body")
+            .append("svg")
+            .style("background", "aliceblue")
+            .attr("width", 1000)
+            .attr("height", 100);
+
+        // Join the data with a circles slection and set parameters for each circle based on the data
+        svg.selectAll("rect")
+            .data(dataset).enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * 40 })
+            .attr("y", 20)
+            .attr("width", function(d, i) { return d })
+            .attr("height", function(d, i) { return d });
+        </script>
+    </div>
+    <div class="demo">
+        <script type="text/javascript">
+        //Define a simple dataset
+        var dataset = [4, 11, 22, 17, 2, 25, 16];
+
+        //Create SVG element
+        svg = d3.select("body")
+            .append("svg")
+            .style("background", "aliceblue")
+            .attr("width", 1000)
+            .attr("height", 100);
+
+        // Join the data with a circles slection and set parameters for each circle based on the data
+        svg.selectAll("rect")
+            .data(dataset).enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * 40 })
+            .attr("y", 20)
+            .attr("width", function(d, i) { return Math.sqrt(d) * 3; })
+            .attr("height", function(d, i) { return Math.sqrt(d) * 3; })
+        </script>
+    </div>
+    <div class="demo">
+        <script type="text/javascript">
+        //Define a simple dataset
+        var dataset = [4, 11, 22, 17, 2, 25, 16];
+
+        //Create SVG element
+        svg = d3.select("body")
+            .append("svg")
+            .style("background", "aliceblue")
+            .attr("width", 1000)
+            .attr("height", 100);
+
+        // Join the data with a circles slection and set parameters for each circle based on the data
+        svg.selectAll("rect")
+            .data(dataset).enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * 40 })
+            .attr("y", 20)
+            .attr("width", function(d, i) { return Math.sqrt(d) * 3 })
+            .attr("height", function(d, i) { return Math.sqrt(d) * 3 })
+            .style("fill", function(d) {
+                if (d > 15) {
+                    return "green";
+                } else {
+                    return "red";
+                }
+            })
+        </script>
+    </div>
+    <div class="demo">
+        <script type="text/javascript">
+        //Define a simple dataset
+        var dataset = [];
+        for (var i = 0; i < 10; i++) {
+            var num = Math.floor(Math.random() * 25);
+            dataset.push(num);
+        }
+        //Create SVG element
+        svg = d3.select("body")
+            .append("svg")
+            .style("background", "aliceblue")
+            .attr("width", 1000)
+            .attr("height", 100);
+
+        // Join the data with a circles slection and set parameters for each circle based on the data
+        svg.selectAll("rect")
+            .data(dataset).enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * 40 })
+            .attr("y", 20)
+            .attr("width", function(d, i) { return Math.sqrt(d) * 3 })
+            .attr("height", function(d, i) { return Math.sqrt(d) * 3 })
+            .style("fill", function(d) {
+                if (d > 15) {
+                    return "green";
+                } else {
+                    return "red";
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

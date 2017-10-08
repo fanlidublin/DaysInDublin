@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Selection .filter</title>
+</head>
+
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+circle {
+  fill: #ddd;
+}
+</style>
+
+<body>
+  <svg width="760" height="140">
+    <g transform="translate(70, 70)">
+      <circle r="40" />
+      <circle r="40" cx="120" />
+      <circle r="40" cx="240" />
+      <circle r="40" cx="360" />
+      <circle r="40" cx="480" />
+    </g>
+  </svg>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+  <script>
+d3.selectAll('circle')
+  .filter(function(d, i) {
+    return i % 2 == 0;
+  })
+  .style('fill', 'orange');
+  </script>
+</body>
+</html>

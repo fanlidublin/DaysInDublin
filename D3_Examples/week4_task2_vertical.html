@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="tas-com">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3: A First Data Join in D3</title>
+    <link href="./themes/prism.css" rel="stylesheet" />
+    <link href="./themes/tas_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+    <script src="./lib/prism.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <h2>Task2__Horizontal</h2>
+    <div class="demo">
+        <script type="text/javascript">
+        //Width and height
+        var svg_width = 600;
+        var svg_height = 150;
+        var barPadding = 3;
+        var value_scalar = 10000000;
+        var axis_gap_bar = 15
+        var axis_gap_text = 3
+        //Create SVG element
+        var svg = d3.select("body")
+            .append("svg")
+            .style("background", "aliceblue")
+            .attr("width", svg_width)
+            .attr("height", svg_height);
+        var dataset;
+        // Define a fucntion to draw a simple bar chart
+        function generateVis() {
+            // Add rectangles
+            svg.selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("x", function(d, i) {
+                    return i * (svg_width / dataset.length);
+                })
+                .attr("y", function(d) {
+                    return svg_height - (+d.Population / value_scalar) - axis_gap_bar;
+                })
+                .attr("width", svg_width / dataset.length - barPadding)
+                .attr("height", function(d) {
+                    return +d.Population / value_scalar;
+                })
+                .attr("fill", "Blue");
+            // Add labels
+            svg.selectAll("text")
+                .data(dataset)
+                .enter()
+                .append("text")
+                .text(function(d) {
+                    return d.Country;
+                })
+                .attr("text-anchor", "middle")
+                .attr("x", function(d, i) {
+                    return i * (svg_width / dataset.length) + (svg_width / dataset.length - barPadding) / 2;
+                })
+                .attr("y", function(d) {
+                    return svg_height - axis_gap_text;
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("fill", "black");
+        }
+        // Load the file data.csv and generate a visualisation based on it
+        d3.csv("./Top10WorldPopulations.csv", function(error, data) {
+            // handle any data loading errors
+            if (error) {
+                console.log("Something went wrong");
+                console.log(error);
+            } else {
+                console.log("Data Loaded");
+                // Assign  the data object loaded to the global dataset variable
+                dataset = data;
+                // Generate the visualisation
+                generateVis();
+            }
+        });
+        </script>
+    </div>
+</body>
+
+</html>

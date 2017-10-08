@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<style>
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.person {
+    height: 20px;
+    position: relative;
+}
+
+.person .label {
+    width: 90px;
+    text-align: right;
+}
+
+.person .bar {
+    height: 19px;
+    background-color: steelblue;
+    position: absolute;
+    left: 100px;
+}
+
+.person div {
+    display: inline-block;
+}
+
+.menu {
+    margin-top: 20px;
+}
+</style>
+
+<body>
+    <div id="wrapper">
+    </div>
+    <div class="menu">
+        <button onClick="sort();">Sort</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script>
+    myData = [{
+            "name": "Andy",
+            "score": 37
+        },
+        {
+            "name": "Beth",
+            "score": 39
+        },
+        {
+            "name": "Craig",
+            "score": 31
+        },
+        {
+            "name": "Diane",
+            "score": 35
+        },
+        {
+            "name": "Evelyn",
+            "score": 38
+        }
+    ];
+
+    var barWidth = 400;
+    var barScale = d3.scaleLinear().domain([0, 100]).range([0, barWidth]);
+
+    var u = d3.select('#wrapper')
+        .selectAll('.person')
+        .data(myData);
+
+    var entering = u.enter()
+        .append('div')
+        .classed('person', true);
+
+    entering.append('div')
+        .classed('label', true)
+        .text(function(d) {
+            return d.name;
+        });
+
+    entering.append('div')
+        .classed('bar', true)
+        .style('width', function(d) {
+            return barScale(d.score) + 'px';
+        });
+
+    function sort() {
+        d3.selectAll('.person')
+            .sort(function(a, b) {
+                return b.score - a.score;
+            });
+    }
+    </script>
+</body>
+
+</html>

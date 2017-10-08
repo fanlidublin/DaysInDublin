@@ -1,0 +1,57 @@
+
+html {
+  min-width: 500;
+  max-width: 960;
+}
+
+.tas-com body {
+  background: #fcfcfa;
+  color: #333;
+  font-family: serif;
+  position: relative;
+}
+
+.tas-com h1,
+.tas-com h2,
+.tas-com h3,
+.tas-com h4 {
+  font-family: arial;
+}
+
+.tas-com h1,
+.tas-com h2,
+.tas-com h3,
+.tas-com h4 {
+  color: #000;
+}
+
+
+.tas-com h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.tas-com h2 { 
+  font-size: 18px;
+  margin-top: 1em;
+}
+
+.tas-com h3 { 
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+.tas-com h1, h2 {
+  text-rendering: optimizeLegibility;
+}
+
+.tas-com body > p, li > p {
+  line-height: 1.5em;
+}
+
+
+.tas-com a {
+  color: steelblue;
+}
+

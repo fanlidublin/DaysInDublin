@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Event handler</title>
+</head>
+
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+circle {
+  fill: #ddd;
+  cursor: pointer;
+}
+</style>
+
+<body>
+  <svg width="760" height="140">
+    <g transform="translate(70, 70)">
+      <circle r="40" />
+      <circle r="40" cx="120" />
+      <circle r="40" cx="240" />
+      <circle r="40" cx="360" />
+      <circle r="40" cx="480" />
+    </g>
+  </svg>
+  <div class="status">Click on a circle</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+  <script>
+d3.selectAll('circle')
+  .on('click', function(d, i) {
+    d3.select('.status')
+      .text('You clicked on circle ' + i);
+    d3.select(this)
+      .style('fill', 'orange');
+  });
+  </script>
+</body>
+</html>
