@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <title>SVG Axis</title>
+</head>
+<style>
+path {
+    fill: none;
+    stroke: #aaa;
+}
+</style>
+
+<body>
+    <svg width="700" height="40">
+        <g class="axis" transform="translate(20, 20)" />
+    </svg>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script>
+    var scale = d3.scaleLinear().domain([0, 1000000]).range([0, 660]);
+    var format = d3.format(",");
+
+    // to show the words above or using "axisBottom" to show words below the coordinate axis
+    var axis = d3.axisTop().scale(scale)
+        .tickFormat(function(d) {
+            return '£' + format(d);
+        })
+        // how many gaps the axis have
+        .ticks(5);
+
+    d3.select('.axis')
+        .call(axis);
+    </script>
+</body>
+
+</html>
