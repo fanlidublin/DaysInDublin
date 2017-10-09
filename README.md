@@ -9,9 +9,8 @@ This repository created by me aims to record and restore the algorithms and prog
 
 
 ## Catalogue
-- [Daily or Marvelously](https://github.com/fanlidublin/DaysInDublin/tree/master/Daily%20or%20Marvelously)
+- [Code_Buffer](https://github.com/fanlidublin/DaysInDublin/tree/master/Code_Buffer)
 
-- [D3_Examples](https://github.com/fanlidublin/DaysInDublin/tree/master/D3_Examples)
+- [Machine Learning](https://github.com/fanlidublin/DaysInDublin/tree/master/Machine%20Learning)
 
-- [The Interlligence of Math](https://github.com/fanlidublin/DaysInDublin/tree/master/The%20Interlligence%20of%20Math)
-
+- [D3_Examples](https://github.com/fanlidublin/DaysInDublin/tree/master/Visualization_d3_js)
