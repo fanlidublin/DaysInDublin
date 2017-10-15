@@ -1,62 +1,58 @@
 <!DOCTYPE html>
-<html lang = "en" class="tas-com">
+<html lang="en" class="tas-com">
+
 <head>
-	<meta charset="utf-8">
-	<title>D3: Styling SVG Elements</title>
-	<link href="./themes/prism.css" rel="stylesheet" />
-	<link href="./themes/tas_style.css" rel="stylesheet" />
-	<script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
-	<script src="./lib/prism.js" charset="utf-8"></script>
-	<style type="text/css">
-		.secret{
-		    color: white;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>D3: Styling SVG Elements</title>
+    <link href="./themes/prism.css" rel="stylesheet" />
+    <link href="./themes/tas_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+    <script src="./lib/prism.js" charset="utf-8"></script>
+    <style type="text/css">
+    .secret {
+        color: white;
+    }
+    </style>
 </head>
+
 <body>
+    <h1>European Flag v0.1</h1>
+    <svg>
+    </svg>
+    <script type="text/javascript">
+    var num_circles = 12;
+    var a = 45;
+    var b = 25;
+    var r = 15;
+    var r2 = 3;
+    var s = 2;
+    var d_angle = 2 * Math.PI / num_circles;
 
-	<h1>European Flag v0.1</h1>
+    var svg = d3.select("svg");
 
-
-
-	<svg>
-
-	</svg>
-	<script type="text/javascript">
-
-		var num_circles = 12;
-		var a = 45;
-		var b = 25;
-		var r = 15;
-		var r2 = 3;
-		var s = 2;
-		var d_angle = 2*Math.PI/num_circles;
-
-		var svg = d3.select("svg");
-		
-		svg.append("rect")
-					.attr("x", 0)
-					.attr("y", 0)
-					.attr("width", 90)
-					.attr("height", 50)
-					.style("fill", "blue");
+    svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", 90)
+        .attr("height", 50)
+        .style("fill", "blue");
 
 
-		for(i = 0; i < num_circles; i++){
-			var x = a + r*Math.cos(d_angle*i);
-			var y = b + r*Math.sin(d_angle*i);
-			svg.append("circle")
-				//.attr("cx", (x-2)/s)
-				.attr("cx", x)
-				//.attr("cy", (y-2)/s)
-				.attr("cy", y)
-				.attr("r", r2)
-				.style("fill", "yellow");
+    for (i = 0; i < num_circles; i++) {
+        var x = a + r * Math.cos(d_angle * i);
+        var y = b + r * Math.sin(d_angle * i);
+        svg.append("circle")
+            // .attr("cx", (x-2)/s)
+            .attr("cx", x)
+            // .attr("cy", (y-2)/s)
+            .attr("cy", y)
+            .attr("r", r2)
+            .style("fill", "yellow");
 
-		console.log(x);
-		console.log(y);
-		}
-	</script>
-
+        console.log(x);
+        console.log(y);
+    }
+    </script>
 </body>
+
 </html>
