@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en" class="tas-com">
+<head>
+	<meta charset="utf-8">
+	<title>Circles</title>
+	<link href="./themes/prism.css" rel="stylesheet" />
+	<link href="./themes/tas_style.css" rel="stylesheet" />
+	<script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+	<script src="./lib/prism.js" charset="utf-8"></script>
+	<style type="text/css">
+		.secret{
+		    color: white;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Circles</h1>
+
+
+
+	<svg width = "500" height = "500">
+
+	</svg>
+
+	<script type="text/javascript">
+
+		var num_circles = 10;
+		var a = 45;
+		var b = 25;
+		var r = 40;
+		var s = 50;
+
+		var svg = d3.select("svg");
+		
+		for(i = 0; i < num_circles; i++){
+			var x = a + i*s;
+			var y = b + i*s;
+
+			colour = "black";
+
+			if(i % 2 == 0){
+				colour = "black";
+			}else{
+				colour = "red";
+			}
+
+			svg.append("circle")
+				.attr("cx", x)
+				.attr("cy", y)
+				.attr("r", r)
+				.style("fill", colour)
+				.style("stroke", "black")
+				.style("opacity", 0.7);
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en" class="tas-com">
+<head>
+	<meta charset="utf-8">
+	<title>D3: Styling SVG Elements</title>
+	<link href="./themes/prism.css" rel="stylesheet" />
+	<link href="./themes/tas_style.css" rel="stylesheet" />
+	<script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+	<script src="./lib/prism.js" charset="utf-8"></script>
+	<style type="text/css">
+		.secret{
+		    color: white;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>European Flag</h1>
+
+
+
+	<svg>
+
+	</svg>
+	<script type="text/javascript">
+
+		var num_stars = 12;
+		var a = 45;
+		var b = 25;
+		var r = 15;
+		var r2 = 3;
+		var s = 2;
+		var d_angle = 2*Math.PI/num_stars;
+
+		var svg = d3.select("svg");
+		
+		svg.append("rect")
+					.attr("x", 0)
+					.attr("y", 0)
+					.attr("width", 90)
+					.attr("height", 50)
+					.style("fill", "blue");
+
+
+		for(i = 0; i < num_stars; i++){
+			var x = a + r*Math.cos(d_angle*i);
+			var y = b + r*Math.sin(d_angle*i);
+			svg.append("polygon")
+				.attr("points", "0,0.9511, 1.0,0.95111, 1.309,0, 1.618,0.9511, 2.618,0.9511, 1.809,1.5388, 2.118,2.4899, 1.309,1.9021, 0.5,2.4899, 0.809,1.5388")
+ 				.attr("fill", "yellow")
+				.attr("transform", "scale("+ s + "), translate("+ (x-2)/s + ", " + (y-2)/s + ")" )
+				.style("fill", "yellow");
+		}
+	</script>
+
+</body>
+</html>
