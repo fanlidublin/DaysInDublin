@@ -36,14 +36,14 @@
 
             // Instead of a fixed domain we could calculate this from the dataset
             var yScale = d3.scaleLinear()
-                               .domain([0, d3.max(dataset, function(d){return +d.Population})])
-                               .range([0, (svg_height-axis_gap_bar)]);
+                .domain([0, d3.max(dataset, function(d) { return +d.Population })])
+                .range([0, (svg_height - axis_gap_bar)]);
 
             // Create a scale object to nicely take care of positioning bars along the horizontal axis
             var xScale = d3.scaleBand()
-                            .domain(dataset.map(function(d) { return d.Country; }))
-                            .range([0, svg_width], 0.1)
-                            .paddingInner(0.05);
+                .domain(dataset.map(function(d) { return d.Country; }))
+                .range([0, svg_width], 0.1)
+                .paddingInner(0.05);
 
             // Add rectangles
             svg.selectAll("rect")
@@ -72,7 +72,7 @@
                 })
                 .attr("text-anchor", "middle")
                 .attr("x", function(d, i) {
-                    return xScale(d.Country) + xScale.bandwidth()/2;
+                    return xScale(d.Country) + xScale.bandwidth() / 2;
                 })
                 .attr("y", function(d) {
                     return svg_height - axis_gap_text;

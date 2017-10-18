@@ -60,7 +60,7 @@
             // Create a scale object to nicely take care of positioning bars along the horizontal axis
             var yScale = d3.scaleBand()
                 .domain(dataset.map(function(d) { return d.Country; }))
-                .range([0, svg_height], 0.1)
+                .range([0, svg_height])
                 .paddingInner(0.2);
 
             var xAxis = d3.axisBottom()
