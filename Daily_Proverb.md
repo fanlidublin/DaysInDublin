@@ -4,4 +4,5 @@
 - Knowing is not enough, we must apply. Willing is not enough, we must do. Johann Wolfgang von Goethe
 - Doubt kills more dreams than failure ever will. Suzy Kassem
 - Lead with your strengths, not your weaknesses. Unknown
--
+- Learn to enjoy every minute of your life. Be happy now. Don't wait for
+something outside of yourself to make you happy in the future. Earl Nightingale
