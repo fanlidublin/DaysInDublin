@@ -1,5 +1,5 @@
-# Proverb
-- The master has failed more times than the beginner has even tried.” Stephen McCranie
+# Proverbs
+- The master has failed more times than the beginner has even tried. Stephen McCranie
 
 - It is more important to know where you are going than to get there quickly. Do not mistake activity for achievement. Isocrates
 
@@ -15,3 +15,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Don't think about what might go wrong, think about what could be right. Unknown
 
 - One's destination is never a place but rather a new way of looking at things. Henry Miller
+
+-There is no passion to be found playing small, in settling for a life that is less than the one you are capable of living. Nelson Mandela
