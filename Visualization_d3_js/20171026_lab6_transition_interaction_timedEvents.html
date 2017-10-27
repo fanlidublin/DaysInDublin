@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="tas-com">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3: Interactions In D3</title>
+    <link href="./themes/prism.css" rel="stylesheet" />
+    <link href="./themes/tas_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./d3/d3.v4.js" charset="utf-8"></script>
+    <script src="./lib/prism.js" charset="utf-8"></script>
+    <style type="text/css">
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+
+    .button-bar {
+        width: 500px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        float: left;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .play_button {
+        float: left;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .stop_button {
+        float: left;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .selected {
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Interactions In D3</h1>
+    <h2>Demo</h2>
+    <div class="demo">
+        <div class="button-bar">
+            <div class="play_button">Play All</div>
+        </div>
+        <br><br>
+        <div class="button-bar">
+            <div class="stop_button">Stop</div>
+
+        </div>
+        <hr style="clear:both;">
+        <div class="button-bar">
+            <div class="button selected">2013</div>
+            <div class="button">2014</div>
+            <div class="button">2015</div>
+        </div>
+        <hr style="clear:both;">
+        <div>
+            <script type="text/javascript" id="demo_code">
+            // Define margins
+            var margin = { top: 10, right: 10, bottom: 25, left: 25 };
+
+            //Width and height
+            var outer_width = 420;
+            var outer_height = 120;
+            var svg_width = outer_width - margin.left - margin.right;
+            var svg_height = outer_height - margin.top - margin.bottom;
+
+            // The year to display
+            display_year = 2013;
+
+            // define a function that filters data by year
+            function yearFilter(value) {
+                return (value.Year == display_year)
+            }
+
+            //Create SVG element as a group with the margins transform applied to it
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width", svg_width + margin.left + margin.right)
+                .attr("height", svg_height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            // Create a scale to scale market share values nicely for bar heights
+            var yScale = d3.scaleLinear()
+                .domain([0, 50])
+                .range([svg_height, 0]);
+
+            // Create a scale object to nicely take care of positioning bars along the horizontal axis
+            // We don't set the domain yet as data isn't loaded
+            var xScale = d3.scaleBand()
+                .range([0, svg_width], 0.1)
+                .paddingInner(0.05)
+                .paddingOuter(0.05);
+
+            //Define Y axis
+            var yAxis = d3.axisLeft()
+                .scale(yScale)
+                .ticks(5);
+
+            // Create an x-axis connected to the x scale
+            var xAxis = d3.axisBottom()
+                .scale(xScale);
+
+            // Call the y axis
+            svg.append("g")
+                .attr("class", "axis")
+                .attr("id", "y-axis")
+                .call(yAxis);
+
+            // All but call the x-axis
+            svg.append("g")
+                .attr("class", "axis")
+                .attr("id", "x-axis")
+                .attr("transform", "translate(0," + svg_height + ")");
+
+            // Define a fucntion to draw a simple bar chart
+            function generateVis() {
+
+                // Filter the data to only include the current year
+                var filtered_datset = dataset.filter(yearFilter);
+
+                // Update the domain of the x scale
+                xScale.domain(filtered_datset.map(function(d) { return d.Company; }));
+                // Call the x-axis
+                svg.select("#x-axis").call(xAxis);
+
+                /******** PERFORM DATA JOIN ************/
+                // Join new data with old elements, if any.
+                var bars = svg.selectAll("rect")
+                    .data(filtered_datset, function key(d) {
+                        return d.Company;
+                    });
+
+                /******** HANDLE UPDATE SELECTION ************/
+                // Update the display of existing elelemnts to match new data
+                bars
+                    .attr("x", function(d) {
+                        return xScale(d.Company);
+                    })
+                    .attr("y", function(d) {
+                        return yScale(+d.Share);
+                    })
+                    .attr("width", xScale.bandwidth())
+                    .attr("height", function(d) {
+                        return svg_height - yScale(+d.Share);
+                    });
+
+
+                /******** HANDLE ENTER SELECTION ************/
+                // Create new elements in the dataset
+                bars.enter()
+                    .append("rect")
+                    .attr("x", function(d, i) {
+                        return xScale(d.Company);
+                    })
+                    .attr("y", function(d) {
+                        return yScale(+d.Share);
+                    })
+                    .attr("width", xScale.bandwidth())
+                    .attr("height", function(d) {
+                        return svg_height - yScale(+d.Share);
+                    })
+
+                    .style("fill", "Blue")
+
+                    // 3 events
+                    .on("mouseover", function(d) {
+                        d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .style("fill", "orange");
+                    })
+                    .on("mouseout", function(d) {
+                        d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .style("fill", "blue")
+                            .style("stroke", "none")
+                            .style("stroke-width", 0);
+                    })
+                    .on("click", function(d) {
+                        d3.select(this)
+                            .style("stroke", "black")
+                            .style("stroke-width", 2);
+                    })
+                    .append("title")
+                    .text(function(d) {
+                        return "Market Share: " + d.Share;
+                    });
+
+                /******** HANDLE EXIT SELECTION ************/
+                // Remove bars that not longer have a matching data eleement
+                bars.exit().remove();
+
+                // Set the year label
+                d3.select("#year_header").text("Year: " + display_year)
+
+            }
+
+            // Load the file data.csv and generate a visualisation based on it
+            d3.csv("./data/BroadbandMarketshare2013_2015.csv", function(error, data) {
+
+                // handle any data loading errors
+                if (error) {
+                    console.log("Something went wrong");
+                    console.log(error);
+                } else {
+                    console.log("Data Loaded");
+
+                    // Assign  the data object loaded to the global dataset variable
+                    dataset = data;
+
+                    // Generate the visualisation
+                    generateVis();
+                }
+            });
+
+            // Add an on-click event handler to each button that updates the display year
+            d3.selectAll(".button")
+                .on("click", function(d) {
+                    // Deselect all of the other buttons
+                    d3.select(".selected")
+                        .classed("selected", false);
+                    // Select the clicked button
+                    d3.select(this)
+                        .classed("selected", true);
+                    // Update the display year
+                    display_year = d3.select(this).text();
+                    // Update the visualsiation
+                    generateVis();
+                    // If the user selectes a specifc year then stop loopping if it is in action
+                    clearInterval(playInterval);
+                });
+
+
+            // A global variable for the interval listeneer so that it can be stopped elsewhere
+            var playInterval;
+
+            // Add an event listener to the play all button do that when it is clicked the visualisaiton iterates through the different years
+            d3.select(".play_button")
+                .on("click", function() {
+                    // Set up the interval callback
+                    playInterval = setInterval(function() {
+                        // Increment the display year
+                        display_year++;
+                        // Make the display_year loop around from max to min
+                        if (display_year > 2015) {
+                            display_year = 2013;
+                        }
+                        // Update the visualsiation
+                        generateVis();
+                    }, 1000);
+                });
+
+            // The function of stop play this
+             d3.select(".stop_button")
+             	.on("click",function(){
+             		clearInterval(playInterval);
+             	});
+
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>
