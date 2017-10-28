@@ -16,4 +16,6 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - One's destination is never a place but rather a new way of looking at things. Henry Miller
 
--There is no passion to be found playing small, in settling for a life that is less than the one you are capable of living. Nelson Mandela
+- There is no passion to be found playing small, in settling for a life that is less than the one you are capable of living. Nelson Mandela
+
+- What are the most powerful words in the universe? The ones you use to talk to yourself. Karen Salmansohn
