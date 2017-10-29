@@ -19,3 +19,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - There is no passion to be found playing small, in settling for a life that is less than the one you are capable of living. Nelson Mandela
 
 - What are the most powerful words in the universe? The ones you use to talk to yourself. Karen Salmansohn
+
+- Showing off is the fool's idea of glory. Bruce Lee
