@@ -21,3 +21,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - What are the most powerful words in the universe? The ones you use to talk to yourself. Karen Salmansohn
 
 - Showing off is the fool's idea of glory. Bruce Lee
+
+- A wet man does not fear the rain. Unknown
