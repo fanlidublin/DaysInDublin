@@ -23,3 +23,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Showing off is the fool's idea of glory. Bruce Lee
 
 - A wet man does not fear the rain. Unknown
+
+- The wisest mind has something yet to learn. George Santayana
