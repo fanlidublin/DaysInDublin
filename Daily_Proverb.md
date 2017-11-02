@@ -25,3 +25,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - A wet man does not fear the rain. Unknown
 
 - The wisest mind has something yet to learn. George Santayana
+
+- Reflect upon your blessings, of which everyone has plenty, not on your past misfortunes, of which everyone has some. Charles Dickens
