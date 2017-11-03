@@ -27,3 +27,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - The wisest mind has something yet to learn. George Santayana
 
 - Reflect upon your blessings, of which everyone has plenty, not on your past misfortunes, of which everyone has some. Charles Dickens
+
+- Do what you can, with what you have, where you are. Theodore Roosevelt
