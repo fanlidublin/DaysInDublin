@@ -29,3 +29,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Reflect upon your blessings, of which everyone has plenty, not on your past misfortunes, of which everyone has some. Charles Dickens
 
 - Do what you can, with what you have, where you are. Theodore Roosevelt
+
+- The secret to your success is found in your daily routine. John C. Maxwell
