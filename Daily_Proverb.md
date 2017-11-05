@@ -31,3 +31,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Do what you can, with what you have, where you are. Theodore Roosevelt
 
 - The secret to your success is found in your daily routine. John C. Maxwell
+
+- A head full of fears has no space for dreams. Unknown
