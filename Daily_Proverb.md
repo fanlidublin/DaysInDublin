@@ -33,3 +33,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - The secret to your success is found in your daily routine. John C. Maxwell
 
 - A head full of fears has no space for dreams. Unknown
+
+- We don't see things as they are, we see them as we are. Anaïs Nin
