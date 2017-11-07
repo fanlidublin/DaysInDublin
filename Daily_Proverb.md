@@ -35,3 +35,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - A head full of fears has no space for dreams. Unknown
 
 - We don't see things as they are, we see them as we are. Anaïs Nin
+
+- Stop managing your time. Start managing your focus. Robin Sharma
