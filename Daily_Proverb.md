@@ -37,3 +37,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - We don't see things as they are, we see them as we are. Anaïs Nin
 
 - Stop managing your time. Start managing your focus. Robin Sharma
+
+- People may hear your words, but they feel your attitude. John C. Maxwell
