@@ -39,3 +39,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Stop managing your time. Start managing your focus. Robin Sharma
 
 - People may hear your words, but they feel your attitude. John C. Maxwell
+
+- If you're going through hell, keep going. Winston Churchill
