@@ -41,3 +41,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - People may hear your words, but they feel your attitude. John C. Maxwell
 
 - If you're going through hell, keep going. Winston Churchill
+
+- Our dreams can come true if we have the courage to pursue them. Walt Disney
