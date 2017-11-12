@@ -43,3 +43,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - If you're going through hell, keep going. Winston Churchill
 
 - Our dreams can come true if we have the courage to pursue them. Walt Disney
+
+- Unless you try to do something beyond what you have already mastered you will never grow. Ralph Waldo Emerson
