@@ -45,3 +45,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Our dreams can come true if we have the courage to pursue them. Walt Disney
 
 - Unless you try to do something beyond what you have already mastered you will never grow. Ralph Waldo Emerson
+
+- Failure is just practice for success. Unknown
