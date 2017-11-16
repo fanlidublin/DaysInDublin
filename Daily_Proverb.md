@@ -47,3 +47,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Unless you try to do something beyond what you have already mastered you will never grow. Ralph Waldo Emerson
 
 - Failure is just practice for success. Unknown
+
+- Ask yourself, who do you want to be? Figure out for yourself what makes you happy, no matter how crazy it may sound to other people. Arnold Schwarzenegger
