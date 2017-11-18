@@ -51,3 +51,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Ask yourself, who do you want to be? Figure out for yourself what makes you happy, no matter how crazy it may sound to other people. Arnold Schwarzenegger
 
 - Too many people overvalue what they are not and undervalue what they are. Malcolm S. Forbes
+
+- Mistakes are the portals of discovery. James Joyce
