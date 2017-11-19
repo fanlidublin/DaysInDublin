@@ -53,3 +53,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Too many people overvalue what they are not and undervalue what they are. Malcolm S. Forbes
 
 - Mistakes are the portals of discovery. James Joyce
+
+- If you don't prioritize your life, someone else will. Greg McKeown
