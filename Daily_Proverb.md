@@ -55,3 +55,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Mistakes are the portals of discovery. James Joyce
 
 - If you don't prioritize your life, someone else will. Greg McKeown
+
+- Do the thing you think you cannot do. Eleanor Roosevelt
