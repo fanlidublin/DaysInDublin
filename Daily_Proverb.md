@@ -57,3 +57,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - If you don't prioritize your life, someone else will. Greg McKeown
 
 - Do the thing you think you cannot do. Eleanor Roosevelt
+
+- The penalty for procrastination is the loss of hopes and dreams. Tai Lopez
