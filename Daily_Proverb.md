@@ -59,3 +59,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Do the thing you think you cannot do. Eleanor Roosevelt
 
 - The penalty for procrastination is the loss of hopes and dreams. Tai Lopez
+
+- Tough times don't last; tough people do. Gregory Peck
