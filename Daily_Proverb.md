@@ -61,3 +61,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - The penalty for procrastination is the loss of hopes and dreams. Tai Lopez
 
 - Tough times don't last; tough people do. Gregory Peck
+
+- It takes as much energy to wish as it does to plan. Eleanor Roosevelt
