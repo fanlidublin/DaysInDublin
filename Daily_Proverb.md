@@ -63,3 +63,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Tough times don't last; tough people do. Gregory Peck
 
 - It takes as much energy to wish as it does to plan. Eleanor Roosevelt
+
+- Don't blame others as an excuse for you not working hard enough. Unknown
