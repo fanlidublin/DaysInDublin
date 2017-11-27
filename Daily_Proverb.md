@@ -65,3 +65,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - It takes as much energy to wish as it does to plan. Eleanor Roosevelt
 
 - Don't blame others as an excuse for you not working hard enough. Unknown
+
+- It doesn't matter where you start. Only that you begin. Robin Sharma
