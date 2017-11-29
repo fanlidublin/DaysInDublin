@@ -67,3 +67,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Don't blame others as an excuse for you not working hard enough. Unknown
 
 - It doesn't matter where you start. Only that you begin. Robin Sharma
+
+- Always remember that the future comes one day at a time. Dean Acheson
