@@ -1,0 +1,83 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.year {
+    font-size: 350px;
+    font-family: Titillium Web;
+    opacity: 0.2
+}
+
+
+/*the style sheet of top up div to show Countries' name */
+
+.tooltip {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    font-weight: bold;
+    padding: 10px;
+    background: white;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/*the style of the continent selection div*/
+
+.colorCountry {
+    margin-bottom: 20px;
+    height: 10px;
+    padding-bottom: 1;
+    border-radius: 5;
+}
+
+
+/* Generated from this website: http://css3buttongenerator.com/*/
+
+.control_button {
+    background: #3e454a;
+    background-image: -webkit-linear-gradient(top, #3e454a, #838587);
+    background-image: -moz-linear-gradient(top, #3e454a, #838587);
+    background-image: -ms-linear-gradient(top, #3e454a, #838587);
+    background-image: -o-linear-gradient(top, #3e454a, #838587);
+    background-image: linear-gradient(to bottom, #3e454a, #838587);
+    -webkit-border-radius: 40;
+    -moz-border-radius: 40;
+    border-radius: 40px;
+    font-family: Arial;
+    color: #e4e8e1;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.control_button:hover {
+    background: #65696b;
+    background-image: -webkit-linear-gradient(top, #65696b, #0a4770);
+    background-image: -moz-linear-gradient(top, #65696b, #0a4770);
+    background-image: -ms-linear-gradient(top, #65696b, #0a4770);
+    background-image: -o-linear-gradient(top, #65696b, #0a4770);
+    background-image: linear-gradient(to bottom, #65696b, #0a4770);
+    text-decoration: none;
+}
+
+.slider {
+    flex-grow: 1;
+    cursor: pointer;
+    padding-left: 35px;
+    display: inline-block;
+}
+
+.left-part {
+    float: left;
+}
+
+.barchrats {
+    float: left;
+}
+
