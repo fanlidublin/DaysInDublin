@@ -69,3 +69,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - It doesn't matter where you start. Only that you begin. Robin Sharma
 
 - Always remember that the future comes one day at a time. Dean Acheson
+
+- The greatest mistake you can make in life is to be continually fearing you will make one. Elbert Hubbard
