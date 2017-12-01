@@ -71,3 +71,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Always remember that the future comes one day at a time. Dean Acheson
 
 - The greatest mistake you can make in life is to be continually fearing you will make one. Elbert Hubbard
+
+- What would life be if we had no courage to attempt anything. Vincent Van Gogh
