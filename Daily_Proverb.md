@@ -73,3 +73,6 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - The greatest mistake you can make in life is to be continually fearing you will make one. Elbert Hubbard
 
 - What would life be if we had no courage to attempt anything. Vincent Van Gogh
+
+- No one can make you feel inferior without your consent. Eleanor Roosevelt
+
