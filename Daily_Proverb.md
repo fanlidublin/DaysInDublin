@@ -76,3 +76,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - No one can make you feel inferior without your consent. Eleanor Roosevelt
 
+- All great achievements require time. Maya Angelou
+
