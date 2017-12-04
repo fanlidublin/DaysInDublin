@@ -78,3 +78,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - All great achievements require time. Maya Angelou
 
+- Incredible things can be done simply if we are committed to making them happen. Sadhguru
+
