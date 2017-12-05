@@ -80,3 +80,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - Incredible things can be done simply if we are committed to making them happen. Sadhguru
 
+- If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. James Cameron
+
