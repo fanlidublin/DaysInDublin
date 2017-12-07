@@ -83,3 +83,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. James Cameron
 
 - Wherever you are, be all there. Jim Elliot
+
+- Your world is a living expression of how you are using—and have used—your mind. Earl Nightingale
