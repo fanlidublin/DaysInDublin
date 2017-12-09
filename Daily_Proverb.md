@@ -85,3 +85,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Wherever you are, be all there. Jim Elliot
 
 - Your world is a living expression of how you are using—and have used—your mind. Earl Nightingale
+
+- Waste no more time arguing about what a good person should be. Be one. Marcus Aurelius
