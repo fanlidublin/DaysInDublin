@@ -87,3 +87,5 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 - Your world is a living expression of how you are using—and have used—your mind. Earl Nightingale
 
 - Waste no more time arguing about what a good person should be. Be one. Marcus Aurelius
+
+One of the greatest discoveries a person makes is to find they can do what they were afraid they couldn't do. Henry Ford
