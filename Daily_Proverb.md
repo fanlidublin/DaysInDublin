@@ -88,4 +88,8 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - Waste no more time arguing about what a good person should be. Be one. Marcus Aurelius
 
-One of the greatest discoveries a person makes is to find they can do what they were afraid they couldn't do. Henry Ford
+- One of the greatest discoveries a person makes is to find they can do what they were afraid they couldn't do. Henry Ford
+
+- Never underestimate the ability of a small group of dedicated people to change the world. Indeed, it is the only thing that ever has. Margaret Mead
+
+
