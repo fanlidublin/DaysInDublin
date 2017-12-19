@@ -92,4 +92,6 @@ something outside of yourself to make you happy in the future. Earl Nightingale
 
 - Never underestimate the ability of a small group of dedicated people to change the world. Indeed, it is the only thing that ever has. Margaret Mead
 
+- The secret of getting ahead is getting started. Mark Twain
+
 
