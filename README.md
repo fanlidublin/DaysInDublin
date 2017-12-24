@@ -17,4 +17,4 @@ This repository created by me aims to record and restore the algorithms and prog
 
 - [Visualization_d3_js](https://github.com/fanlidublin/DaysInDublin/tree/master/Visualization_d3_js)
 
-- [Data Programming with Python](https://github.com/fanlidublin/DaysInDublin/tree/master/Data%20Programming%20with%20Python)
+- [Data Programming with Python](https://github.com/fanlidublin/DaysInDublin/tree/master/Data_Programming_with_Python)
