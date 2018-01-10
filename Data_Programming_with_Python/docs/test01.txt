@@ -1,0 +1,4 @@
+this is a test for text in python list and the words are randomly created
+by me haha, the words are good or not good really depend on what you
+think about it. are you kidding me, yes i am. so let us just
+us this to do test.
