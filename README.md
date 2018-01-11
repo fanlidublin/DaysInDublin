@@ -10,7 +10,7 @@ This repository created by me aims to record and restore the algorithms and prog
 
 ## Catalogue
 
-- [Deep Learning](https://github.com/fanlidublin/DaysInDublin/tree/master/Machine%20Learning)
+- [Deep Learning](https://github.com/fanlidublin/DaysInDublin/tree/master/Deep%20Learning)
 
 - [Natural Language Processing](https://github.com/fanlidublin/DaysInDublin/tree/master/Natural%20Language%20Processing)
 
