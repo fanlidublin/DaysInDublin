@@ -9,12 +9,11 @@ This repository created by me aims to record and restore the algorithms and prog
 
 
 ## Catalogue
-- [Code_Buffer](https://github.com/fanlidublin/DaysInDublin/tree/master/Code_Buffer)
 
-- [Machine Learning](https://github.com/fanlidublin/DaysInDublin/tree/master/Machine%20Learning)
+- [Deep Learning](https://github.com/fanlidublin/DaysInDublin/tree/master/Machine%20Learning)
 
 - [Natural Language Processing](https://github.com/fanlidublin/DaysInDublin/tree/master/Natural%20Language%20Processing)
 
-- [Visualization_d3_js](https://github.com/fanlidublin/DaysInDublin/tree/master/Visualization_d3_js)
+- [Data Visualization](https://github.com/fanlidublin/DaysInDublin/tree/master/Visualization_d3_js)
 
-- [Data Programming with Python](https://github.com/fanlidublin/DaysInDublin/tree/master/Data_Programming_with_Python)
+- [Python](https://github.com/fanlidublin/DaysInDublin/tree/master/Data_Programming_with_Python)
