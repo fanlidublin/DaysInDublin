@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}课程章节(LF-Learning){% endblock %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="/static/css/muke/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/muke/course/learn-less.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/muke/course/common-less.css">
+{% endblock %}
+
+{% block bread %}
+<section>
+    <div class="wp">
+        <div class="crumbs">
+            <ul>
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li><a href="{% url 'course:course_list' %}">公开课程</a>></li>
+                <li><a href="{% url 'course:course_detail' course.id %}">课程详情</a>></li>
+                <li>章节详情</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div id="main">
+    <div class="course-infos">
+        <div class="w pr">
+            <div style="height: 6px" class="path">
+            </div>
+            <div class="hd">
+                <h2 class="l">&nbsp;&nbsp;{{ course.name }}</h2>
+            </div>
+            <div class="statics clearfix">
+                <div class="static-item ">
+                    <span class="meta-value"><strong>{{ course.get_degree_display }}</strong></span>
+                    <span class="meta">难度</span>
+                    <em></em>
+                </div>
+                <div class="static-item static-time">
+                    <span class="meta-value"><strong>大约{{ course.learn_times }}分钟</strong></span>
+                    <span class="meta">时长</span>
+                    <em></em>
+                </div>
+                <div class="static-item">
+                    <span class="meta-value"><strong>{{ course.students }}</strong></span>
+                    <span class="meta">学习人数</span>
+                    <em></em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="course-info-main clearfix w has-progress">
+    <div class="info-bar clearfix">
+    <div class="content-wrap clearfix">
+    <div class="content">
+    <div class="mod-tab-menu">
+        <ul class="course-menu clearfix">
+            <li><a class="ui-tabs-active active" id="learnOn" href="{% url 'course:course_info' course.id %}"><span>章节</span></a></li>
+            <li><a id="commentOn" class="" href="{% url 'course:course_comment' course.id %}"><span>评论</span></a></li>
+        </ul>
+    </div>
+    <div id="notice" class="clearfix">
+        <div class="l"><strong>课程公告:</strong> <a href="javascript:void(0)">您可以从右边👉下载最新的课程相关资料</a></div>
+    </div>
+
+    <div class="mod-chapters">
+        {% for lesson in course.get_lesson %}
+            <div class="chapter chapter-active">
+                <h3>
+                    <strong><i class="state-expand"></i>{{ lesson.name }}</strong>
+                </h3>
+                <ul class="video">
+                    {% for video in lesson.get_video %}
+                        <li>
+                            <a target="_blank" href="{% url 'course:video_play' video.id %}" class="J-media-item studyvideo">
+                                {{ video.name }} &nbsp;&nbsp;&nbsp;(大约{{ video.learn_times }}分钟)
+                                <i class="study-state"></i>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+    <div class="aside r">
+    <div class="bd">
+    <div class="box mb40">
+        <h4>资料下载</h4>
+        <ul class="downlist">
+            {% for courses_res in resources %}
+                <li>
+                    <span><i class="aui-iconfont aui-icon-file"></i>&nbsp;&nbsp;{{ courses_res.name }}</span>
+                    <a href="{{ MEDIA_URL }}{{ courses_res.download }}" class="downcode" target="_blank" download="" data-id="274" title="">下载</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="box mb40">
+        <h4>讲师提示</h4>
+        <div class="teacher-info">
+            <a href="" target="_blank">
+                <img src='{{ MEDIA_URL }}{{ course.teacher.image }}' width='80' height='80'/>
+            </a>
+            <span class="tit">
+            <a href="/u/315464/courses?sort=publish" target="_blank">{{ course.teacher.name }}</a>
+            </span>
+            <span class="job">{{ course.teacher.work_position }}</span>
+        </div>
+        <div class="course-info-tip">
+            <dl class="first">
+                <dt>课程须知</dt>
+                <dd class="autowrap">{{ course.pre_learning }}</dd>
+            </dl>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

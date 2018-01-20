@@ -1,0 +1,16 @@
+{% extends 'org_base.html' %}
+{% block title %}机构介绍页（LF-Learning）{% endblock %}
+{% block page_path %}机构介绍{% endblock %}
+{% block right_form %}
+    <div class="right companycenter layout" >
+        <div class="head">
+            <h1>机构介绍</h1>
+        </div>
+        <div class="des">
+            <p><p>&nbsp; &nbsp;</p><h1 class="ue_t" label="Title center" name="tc" style="border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;text-align:center;margin:0px 0px 20px;"><span style="color:#c0504d;">关于我们</span></h1>
+            {{ course_org.desc }}
+        </div>
+    </div>
+{% endblock %}
+
+

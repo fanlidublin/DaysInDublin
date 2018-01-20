@@ -1,0 +1,61 @@
+{% extends 'org_base.html' %}
+{% block right_form %}
+<div class="right companycenter layout grouping" >
+        <div class="head">
+            <h1>全部课程</h1>
+            <a class="green fr more" href="{% url 'org:org_course' course_org.id %}">查看更多 >  </a>
+        </div>
+    <div class="brief group_list">
+        {% for courses in all_courses %}
+            <div class="module1_5 box">
+                <a class="comp-img-box" href="{% url 'course:course_detail' courses.id %}">
+                    <img width="215" height="195" src="{{ MEDIA_URL }}{{ courses.image }}"/>
+                </a>
+                <div class="des">
+                    <a href="{% url 'course:course_detail' courses.id %}"><h2>{{ courses.name }}</h2></a>
+                    <span class="fl">课时：<i class="key">{{ courses.learn_times }}</i></span>
+                    <span class="fr">参加人数：{{ courses.students }}</span>
+                </div>
+                <div class="bottom">
+                    <span class="fl">{{ courses.course_org.name }}</span>
+                     <span class="star fr  notlogin
+                        " data-favid="13"  data-fav-type="4">
+                        {{ courses.fav_nums }}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="right companycenter layout" >
+    <div class="head">
+        <h1>机构教师</h1>
+        <a class="green fr more" href="{% url 'org:org_teacher' course_org.id %}">查看更多  >  </a>
+    </div>
+    {% for teachers in all_techers %}
+    <div class="diarys">
+        <div class="module5 share company-diary-box" style="padding:10px 0;">
+            <div class="left">
+                <img class="pic" src="{{ MEDIA_URL }}{{ teachers.image }}"/>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="fl">
+                        <a href="{% url 'org:teacher_detail' teachers.id %}"><h1>{{ teachers.name }}</h1></a>
+                        <span>发表于：{{ teachers.add_time }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="right companycenter layout" >
+    <div class="head">
+        <h1>机构介绍</h1>
+    </div>
+    <div class="cont">&nbsp; &nbsp; {{ course_org.desc }}<span class="green"></span></div>
+</div>
+{% endblock %}

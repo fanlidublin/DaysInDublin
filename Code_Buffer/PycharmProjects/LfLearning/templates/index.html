@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block title %}课程机构列表(LF-Learning){% endblock %}
+{% block bread %}
+{% endblock %}
+
+{% block custom_js %}
+    <script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="banner">
+        <div class="wp">
+            <div class="fl">
+                <div class="imgslide">
+                    <ul class="imgs">
+                        {% for banner in banners %}
+                            <li>
+                                <a href="{{ banner.url }}">
+                                    <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}"/>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="unslider-arrow prev"></div>
+                <div class="unslider-arrow next"></div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="wp">
+            <ul class="feature">
+                <li class="feature1">
+                    <img class="pic" src="/static/images/f1.png"/>
+                    <p class="center">专业权威</p>
+                </li>
+                <li class="feature2">
+                    <img class="pic" src="/static/images/f2.png"/>
+                    <p class="center">课程最新</p>
+                </li>
+                <li class="feature3">
+                    <img class="pic" src="/static/images/f3.png"/>
+                    <p class="center">名师授课</p>
+                </li>
+                <li class="feature4">
+                    <img class="pic" src="/static/images/f4.png"/>
+                    <p class="center">数据真实</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+{#    <section>#}
+{#        <div class="module">#}
+{#            <div class="wp">#}
+{#                <h1>核心课程</h1>#}
+{#                <div class="module1 eachmod">#}
+{#                    <div class="module1_1 left">#}
+{#                        <img width="220" height="635" src="/static/images/m1_2.jpg"/>#}
+{#                        <p class="fisrt_word"><br/><br/><br/>最新课程<br/>名师授课</p>#}
+{#                        <a class="more" href="{% url 'course:course_list' %}">查看更多课程 ></a>#}
+{#                    </div>#}
+{#                    <div class="right group_list">#}
+{#                        {% for course in courses %}#}
+{#                            <div class="module1_8 box">#}
+{#                                <a href="{% url 'course:course_detail' course.id %}">#}
+{#                                    <img width="225" height="190"#}
+{#                                         src="{{ MEDIA_URL }}{{ course.image }}"/>#}
+{#                                </a>#}
+{#                                <div class="des">#}
+{#                                    <a href="{% url 'course:course_detail' course.id %}">#}
+{#                                        <h2 title="{{ course.name }}">{{ course.name }}</h2>#}
+{#                                    </a>#}
+{#                                    <span class="fl">难度：<i class="key">{{ course.get_degree_display }}</i></span>#}
+{#                                    <span class="fr">学习人数：{{ course.students }}</span>#}
+{#                                </div>#}
+{#                                <div class="bottom">#}
+{#                                    <span class="fl"#}
+{#                                          title="{{ course.course_org.name }}">{{ course.course_org.name }}</span>#}
+{#                                    <span class="star fr">{{ course.fav_nums }}</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#    <section>#}
+{#        <div class="module">#}
+{#            <div class="wp">#}
+{#                <h1>平台机构</h1>#}
+{#                <div class="module3 eachmod">#}
+{#                    <div class="module3_1 left">#}
+{#                        <img width="220" height="470" src="/static/images/m1_1.jpg"/>#}
+{#                        <p class="fisrt_word">名校来袭<br/>权威认证</p>#}
+{#                        <a class="more" href="{% url 'org:org_list' %}">查看更多机构 ></a>#}
+{#                    </div>#}
+{#                    <div class="right">#}
+{#                        <ul>#}
+{#                            {% for org_show in org %}#}
+{#                                <li class="{% if forloop.counter|divisibleby:5 %}five{% endif %}">#}
+{#                                    <a href="{% url 'org:org_home' org_show.id %}">#}
+{#                                        <div class="company">#}
+{#                                            <img width="185" height="100" src="{{ MEDIA_URL }}{{ org_show.image }}"/>#}
+{#                                            <div class="score">#}
+{#                                                <div class="circle">#}
+{#                                                    <h2>{{ org_show.get_category_display }}</h2>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <p><span class="key" title="{{ org_show.name }}">{{ org_show.name }}</span></p>#}
+{#                                    </a>#}
+{#                                </li>#}
+{#                            {% endfor %}#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{% endblock %}
