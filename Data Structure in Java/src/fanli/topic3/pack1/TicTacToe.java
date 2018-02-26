@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 /** Simulation of a Tic-Tac-Toe game (does not do strategy). */
 public class TicTacToe {

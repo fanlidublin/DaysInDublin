@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 /** Singly linked list . */
 public class SLinkedList {

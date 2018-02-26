@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -14,7 +14,8 @@ public class ArrayTest {
 			int j = i - 1; // start comparing with cell left of i
 			while ((j >= 0) && (a[j] > cur)) // while a[j] is out of order with
 												// cur
-				a[j + 1] = a[j--]; // move a[j] right and decrement j
+				a[j + 1] = a[j]; // move a[j] right and decrement j
+				j -= 1;
 			a[j + 1] = cur; // this is the proper place for cur
 		}
 	}

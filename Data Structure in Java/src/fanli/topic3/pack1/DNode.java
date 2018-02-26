@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 /** Node of a doubly linked list of strings */
 public class DNode {

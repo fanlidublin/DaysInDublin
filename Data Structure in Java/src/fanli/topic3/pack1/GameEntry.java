@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 public class GameEntry {
 	protected String name; // name of the person earning this score

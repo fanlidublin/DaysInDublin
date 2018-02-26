@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 /** Class for doing encryption and decryption using the Caesar Cipher. */
 public class Caesar {

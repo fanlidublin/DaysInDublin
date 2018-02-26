@@ -1,4 +1,4 @@
-package fanli.topic3;
+package fanli.topic3.pack1;
 
 /** Class for storing high scores in an array in non-decreasing order. */
 public class Scores {
