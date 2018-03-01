@@ -11,102 +11,105 @@ package fanli.java.topic3.pack2;
  * @author rem
  */
 public class LinkedList implements List {
-    private class Node implements Position {
-        Node previous;
-        Node next;
-        Object element;
+	private class Node implements Position {
+		Node previous;
+		Node next;
+		Object element;
 
-        public Node(Object element) {
-            this.element = element;
-        }
+		public Node(Object element) {
+			this.element = element;
+		}
 
-        public Object element() {
-            return element;
-        }
-    }
+		public Object element() {
+			return element;
+		}
+	}
 
-    private int size;
-    private Node first;
-    private Node last;
+	private int size;
+	private Node first;
+	private Node last;
 
-    public LinkedList() {
-        size = 0;
-        first = last = null;
-    }
-    
-    public int size() {
-        return size;
-    }
+	public LinkedList() {
+		size = 0;
+		first = last = null;
+	}
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
+	public int size() {
+		return size;
+	}
 
-    public Position first() throws ListEmptyException {
-        if (first == null) throw new ListEmptyException();
+	public boolean isEmpty() {
+		return size == 0;
+	}
 
-        return first;
-    }
+	public Position first() throws ListEmptyException {
+		if (first == null)
+			throw new ListEmptyException();
 
-    public Position last() throws ListEmptyException {
-        if (last == null) throw new ListEmptyException();
+		return first;
+	}
 
-        return last;
-    }
+	public Position last() throws ListEmptyException {
+		if (last == null)
+			throw new ListEmptyException();
 
-    public Position prev(Position p) throws BoundaryViolationException {
-        return null;
-    }
+		return last;
+	}
 
-    public Position next(Position p) throws BoundaryViolationException {
-        // Implement this method based on pseudo code from the CLASS
-        return null;
-    }
+	public Position prev(Position p) throws BoundaryViolationException {
+		return null;
+	}
 
-    public Position insertFirst(Object e) {
-        Node node = new Node(e);
-        if (first == null) {
-            last = node;
-        } else {
-            first.previous = node;
-        }
-        node.next = first;
-        first = node;
-        size++;
-        return node;
-    }
+	public Position next(Position p) throws BoundaryViolationException {
+		// Implement this method based on pseudo code from the CLASS
+		return null;
+	}
 
-    public Position insertLast(Object e) {
-        // Implement this method based on pseudo code from the CLASS
-        return null;
-    }
+	public Position insertFirst(Object e) {
+		Node node = new Node(e);
+		if (first == null) {
+			last = node;
+		} else {
+			first.previous = node;
+		}
+		node.next = first;
+		first = node;
+		size++;
+		return node;
+	}
 
-    public Position insertBefore(Position p, Object e) {
-        // Implement this method based on YOUR pseudo code
-        return null;
-    }
+	public Position insertLast(Object e) {
+		// Implement this method based on pseudo code from the CLASS
+		return null;
+	}
 
-    public Position insertAfter(Position p, Object e) {
-        Node n = (Node) p;
+	public Position insertBefore(Position p, Object e) {
+		// Implement this method based on YOUR pseudo code
+		return null;
+	}
 
-        if (p == last) return insertLast(e);
+	public Position insertAfter(Position p, Object e) {
+		Node n = (Node) p;
 
-        Node node = new Node(e);
-        node.next = n.next;
-        node.previous = n;
-        n.next.previous = node;
-        n.next = node;
-        size++;
-        return node;
-    }
+		if (p == last)
+			return insertLast(e);
 
-    public Object replace(Position p, Object e) {
-        // Implement this method based on YOUR pseudo code
-        return null;
-    }
+		Node node = new Node(e);
+		node.next = n.next;
+		node.previous = n;
+		n.next.previous = node;
+		n.next = node;
+		size++;
+		return node;
+	}
 
-    public Object remove(Position p) {
-        // Implement this method based on pseudo code from the CLASS
-        return null;
-    }
+	public Object replace(Position p, Object e) {
+		// Implement this method based on YOUR pseudo code
+		return null;
+	}
+
+	public Object remove(Position p) {
+		// Implement this method based on pseudo code from the CLASS
+		return null;
+	}
 }

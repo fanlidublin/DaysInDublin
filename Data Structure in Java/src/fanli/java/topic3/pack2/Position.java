@@ -9,5 +9,5 @@ package fanli.java.topic3.pack2;
  * @author rem
  */
 public interface Position {
-    public Object element();
+	public Object element();
 }
