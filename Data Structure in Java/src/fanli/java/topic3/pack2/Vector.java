@@ -1,4 +1,4 @@
-package fanli.java.topic.pack2;
+package fanli.java.topic3.pack2;
 
 /**
  * This is the interface of the Vector ADT as is outlined in the course notes

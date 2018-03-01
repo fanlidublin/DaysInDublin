@@ -1,6 +1,5 @@
-package fanli.java.topic.pack2;
+package fanli.java.topic3.pack2;
 /*
-
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -9,6 +8,6 @@ package fanli.java.topic.pack2;
  *
  * @author rem
  */
-class ListEmptyException extends Exception {
-
+public interface Position {
+    public Object element();
 }

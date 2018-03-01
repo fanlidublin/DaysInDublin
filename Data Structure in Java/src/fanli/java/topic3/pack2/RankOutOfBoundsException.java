@@ -1,4 +1,4 @@
-package fanli.java.topic.pack2;
+package fanli.java.topic3.pack2;
 
 /**
  * Basic implementation of a checked exception that supports the implementation
