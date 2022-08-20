@@ -1,12 +1,12 @@
 # Databricks on Azure with Terraform
 
-Tags: Study
+Tags: Terraform
 
 This note is mainly to give an overall walk-through of how to deploy Databricks workspace and cluster by using Terraform.
 
 ### Providers
 
-```json
+```jsx
 provider "azurerm" {
   features {}
 }
@@ -20,7 +20,7 @@ provider "databricks" {
 
 This is where we tell Terraform what version of Terraform it must use as well constraints we may have about any providers.
 
-```json
+```jsx
 terraform {
   required_version = ">= 1.0"
 
@@ -43,7 +43,7 @@ terraform {
 
 What information we pass into our code, below we declare the variables we required or optional.
 
-```json
+```jsx
 variable "location" {
   type        = string
   description = "(Optional) The location for resource deployment"
@@ -82,7 +82,7 @@ EOT
 
 ### Main
 
-```json
+```jsx
 locals {
   naming = {
     location = {
@@ -152,7 +152,7 @@ resource "azurerm_databricks_workspace" "this" {
 - `[azurerm_network_security_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group)` - This is where any *firewall* type activity will be setup.
 - `[azurerm_subnet_network_security_group_association](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association)` - The association between the subnet and the network security group
 
-```json
+```jsx
 resource "azurerm_virtual_network" "this" {
   name = format("vn-%s-%s-%s",
   local.naming.location[var.location], var.environment, var.project)
@@ -244,7 +244,7 @@ resource "azurerm_subnet_network_security_group_association" "public" {
 
 Before we look into creating the internals of our Databricks instance or our Azure Synapse database we must first create the Azure Active Directory (AAD) application that will be used for authentication.
 
-```json
+```jsx
 resource "random_password" "service_principal" {
   length  = 16
   special = true
@@ -289,7 +289,7 @@ Above we are creating resources with the following properties:
 
 ### Synapse
 
-```json
+```jsx
 resource "azurerm_storage_account" "this" {
   name = format("sa%s%s%s",
   local.naming.location[var.location], var.environment, var.project)
@@ -366,7 +366,7 @@ resource "azurerm_synapse_firewall_rule" "allow_azure_services" {
 
 A single node Databricks cluster
 
-```json
+```jsx
 data "databricks_node_type" "smallest" {
   local_disk = true
 
@@ -408,7 +408,7 @@ resource "databricks_cluster" "this" {
 - the information we want returned to us once the deployment of all the previous code is complete
 - In some case, some value pass onto other modules which can be used
 
-```json
+```jsx
 output "azure_details" {
   sensitive = true
   value = {
@@ -440,14 +440,14 @@ output "synapse" {
 
 ### Deploy
 
-```json
+```bash
 terraform init
 ```
 
-```json
+```bash
 terraform plan -var="environment=dev" -var="project=meow"
 ```
 
-```json
+```bash
 terraform apply -var="environment=dev" -var="project=meow"
 ```
