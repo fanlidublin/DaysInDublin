@@ -95,8 +95,6 @@ Synapse dedicated SQL pools - massively parallel processing (MPP) split query in
     - Cheapest storage option
     - Expect data to be stored for at least 180 days
 
----
-
 ## Chapter 3 - Designing a Partition Strategy
 
 ### Partition strategy for files
@@ -143,9 +141,7 @@ Synapse dedicated SQL pools - massively parallel processing (MPP) split query in
     - loading data
     - filtering queries
 
----
-
-## Designing the Serving Layer
+## Chapter 4 - Designing the Serving Layer
 
 ### Star and Snowflake schemas
 
@@ -197,3 +193,47 @@ Synapse dedicated SQL pools - massively parallel processing (MPP) split query in
     - This helps when modification only require a smaller amount of data frequently instead of the complete row
 - SCD6
     - Combination of 1, 2, 3
+- Temporal data (temporal tables → system-versioned temporal tables)
+    - Azure SQL
+    - SQL Server
+    
+    ```sql
+    CREATE TABLE Customer
+    (
+    	[customerId] INT NOT NULL PRIMARY KEY CLUSTERED,
+    	[name] VARCHAR(100) NOT NULL,[address] VARCHAR(100) NOT NULL,
+    	[email] VARCHAR (100) NOT NULL,[phone] VARCHAR(12) NOT NULL,
+    	[validFrom] DATETIME2 GENERATED ALWAYS AS ROW START,
+    	[validTo] DATETIME2 GENERATED ALWAYS AS ROW END,
+    	PERIOD FOR SYSTEM_TIME (validFrom, validTo),
+    )WITH (SYSTEM_VERSIONING = ON);
+    ```
+    
+    - Start, end column, period for system_time
+    - When create a temporal table, behind the scenes 2 tables get created
+        - temporal table
+        - history table
+        - when data changes
+            - the current values get persisted in the temporal table
+            - the old values get moved into the history table with the end time updated to the current time stamp, with row no longer active
+- Dimensional hierarchy
+    - Group and organize the dimensional data at multiple levels
+        - one-to-many
+        - many-to-many
+    - self-referencing or self-joins
+    - always add the Parent key pointing to the Surrogate Key instead of the Business primary key. Because surrogate keys will be unique, and it will ensure that the dimensional hierarchy doesn't break when changes to the business key happens.
+- Incremental loading
+    - Watermarks
+        - data source is a DB or relational table-based system
+        - have a watermark table which store the info of lasted loaded record
+        - stored procedure got triggered to update the watermark table when data load finish
+        - use to identify (for example, `max(LastModifiedTime)`)the new set of records that need to be loaded
+    - File timestamps
+        - data source is a filesystem or blob
+    - Partition data
+        - data source is partitioned based on time
+    - Folder structure
+        - source is divided based on time
+- Metastores in Synapse and Datrbicks
+    - In-memory version → help jobs running on the JAV but not much further
+    - External version → Hive, APIs to access it
