@@ -237,3 +237,87 @@ Synapse dedicated SQL pools - massively parallel processing (MPP) split query in
 - Metastores in Synapse and Datrbicks
     - In-memory version → help jobs running on the JAV but not much further
     - External version → Hive, APIs to access it
+
+## Chapter 5 - Implementing Physical Data Storage Structures
+
+- Compression
+- Partitioning
+    - Folder structure
+    - Horizontal partitioning or sharding
+        - Dynamic in nature
+        - Done after schemas are created
+        - Usually performed regularly during data loading or during the data transformation
+    - Vertical partitioning
+        - During creating tables
+
+### Sharding using Spark
+
+- In-memory
+    - `repartition()`
+    - `coalesce()`
+    - `repartitionByRange()`
+- On-disk
+    - when output the files → `partitionBy()`
+
+### Distributions
+
+- Hash
+- Round-robin (staging tables, there is no good indexing to choose from)
+- Replicated (Copy the complete table across all the nodes, for small but frequently accessed data)
+
+### SQL dedicated pools → Index
+
+- Clustered column-store indexing
+    - default index
+    - works best for large fact tables
+    - column-based (provide high-level compression)
+- Heap
+    - staging tables
+- Clustered index
+    - row-based
+    - looks, highly selective filters
+
+### Data redundancy
+
+Multiple copies of data at different locations
+
+- Primary region redundancy
+- Secondary region redundancy
+
+Types
+
+- Locally redundant storage (LRS)
+- Zone redundant storage (ZRS)
+- Geo redundant storage (GRS)
+- Geo ZRS (GZRS)
+
+## Chapter 6 - Implementing Logical Data Structures
+
+### SCDs
+
+- An data flow ingestion DimDriver example
+    - new row added in
+    - updated row got updated
+        - new row added in with isActive = 1
+        - all old rows updated to isActive = 0
+
+![Untitled](Packt%20-%20Azure%20Data%20Engineer%20Associate%20Certificatio%20a381ff85f5884370a15d042888a866a2/Untitled.png)
+
+### Logical folder structure
+
+- Data pruning
+    - Divide the data into partitions, ensure that the partitions are stored in different folder structures, then the queries can skip scanning the irrelevant partitions
+- Partition switch and deletion
+    - Dummy table for deletion, switch out the partition of the data
+    - Add new partition needs to split the last partition into 2 partitions
+        - the split won’t work if the partition contains data
+        - so, temporarily swap out the last partition to a dummy table
+        - after split, switch in the original data into the correct partition
+
+### External Tables
+
+- external data source
+- external file format
+- external table
+
+## Chapter 7 - Implementing the Serving Layer
