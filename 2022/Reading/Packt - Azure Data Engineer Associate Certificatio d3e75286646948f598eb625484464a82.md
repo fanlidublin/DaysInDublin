@@ -301,7 +301,7 @@ Types
         - new row added in with isActive = 1
         - all old rows updated to isActive = 0
 
-![Untitled](Packt%20-%20Azure%20Data%20Engineer%20Associate%20Certificatio%20a381ff85f5884370a15d042888a866a2/Untitled.png)
+![Untitled](Packt%20-%20Azure%20Data%20Engineer%20Associate%20Certificatio%20d3e75286646948f598eb625484464a82/Untitled.png)
 
 ### Logical folder structure
 
@@ -321,3 +321,53 @@ Types
 - external table
 
 ## Chapter 7 - Implementing the Serving Layer
+
+### Delivering data in a relational start schema
+
+- Fact
+    - Usually much higher in volume
+    - Benefit from hash distribution
+    - Clustered columnstore index
+- Dim
+    - Smaller
+    - Benefit from using replicated tables
+    - Also clustered columnstore index would be good
+- Dimensional hierarchy
+- Parquet
+- SQL serverless pool is an on-demand service
+
+## Chapter 8 - Ingesting and Transforming Data
+
+### Spark
+
+transformation with 3 different application programming interfaces (APIs)
+
+- RDDs
+    - immutable fault-tolerant collection of data objects that can be operated on in parallel by Spark
+    - most fundamental data structure
+- DataFrames
+    - similar to tables in relational databases
+    - like RDDs → immutable, redundant, distributed, but represent a higher form of data abstraction
+    - contain schemas, columns and rows
+- Datasets
+
+### ADF
+
+Schema transformations
+
+- refer to the actions that result in changing the schema of the table or df
+    - aggregate
+    - derived column
+    - select
+
+Row transformations
+
+- alter row
+- filter
+- sort
+
+Multi-IO transformation
+
+- conditional split
+- join
+- union
