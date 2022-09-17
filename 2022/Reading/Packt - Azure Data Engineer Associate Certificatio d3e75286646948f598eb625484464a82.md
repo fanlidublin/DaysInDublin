@@ -459,3 +459,60 @@ Best practices
 - Encrypt data in transit by using https://
 - Encrypt Batch data at rest by using secret keys
 - Apply compliance and security policies
+
+## Chapter 10 - Designing and Developing a Stream Processing Solution
+
+- Major Components
+    - Event ingestion service (event hubs, IoT hub, Kafka, etc.)
+    - Stream process engine
+    - Analytical data stores
+    - Reporting systems
+- Azure Event Hub
+    - Distributed ingestion service
+    - Buffer between the event producers and consumers
+    - Decouples the event producers from the event consumers, helps the downstream stream components such as ASA or Spark to synchronously process the data
+    - Fully managed PaaS service
+    
+    ![Untitled](Packt%20-%20Azure%20Data%20Engineer%20Associate%20Certificatio%20d3e75286646948f598eb625484464a82/Untitled%201.png)
+    
+    - Take inputs from 2 protocols
+        - Hypertext Transfer Protocol (HTTP)
+        - Advanced message Queuing Protocol (AMQP)
+    - Then distributes the data into ***partitions***
+        - Help horizontal scaling as they allow multiple consumers to read data in parallel
+    - Event receivers, which are part of ***consumer groups***,, can subscribe to the partitions and read the event from there
+    - Consumer groups are views of the event hub
+        - access to different sets of streams or partitions
+        - consumers access the partitions via their own consumer group
+        - maintain state-like offsets in the stream, checkpointing info
+        - the applications within a consumer group can independently process the data without worrying about other clients
+- ASA
+    - Azure’s primary stream processing engine
+        - Process large volumes of data with minimal latencies
+        - Stages
+            1. Read from an ingestion service
+            2. Process the data and generates insights
+            3. Write the data into an analytical store
+- Spark
+    - Internally splits the incoming stream into micro-batches and process them
+    - Example
+        - connection string
+        - readStream
+        - json schema definition
+        - stream handling to extract the body
+        - window, output mode, checkpointing
+    - Structured streaming
+        - data continuously appended to unbounded table
+        - batch processing syntax can be applied to write streaming queries to handle table-based transformations
+        - structured streaming queries as incremental queries
+        - runs at frequent intervals to continuously process the data
+    - Write mode
+        - Complete - entire output is written to the sink
+        - Append - only new rows from the last time
+        - Update - only the rows that have changed are updated
+    - Monitor Spark metrics
+        - input rate
+        - processing rate
+        - batch duration
+- Process time series data
+    -
