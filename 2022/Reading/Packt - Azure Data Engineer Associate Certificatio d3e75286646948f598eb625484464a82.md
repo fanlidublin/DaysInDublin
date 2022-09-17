@@ -371,3 +371,91 @@ Multi-IO transformation
 - conditional split
 - join
 - union
+
+### Cleansing data
+
+- Missing null value
+    - substituting with default values
+    - filter out null values
+- Trimming input
+    - trim(col)
+- Standardizing values
+    - for example → replace({salary}, ‘$’, ‘USD’)
+- Handle outliers
+- Remove duplicates or deduping
+
+### Split data
+
+- Conditional split
+- New branch (copy the entire dataset fro a new execution flow)
+
+### Extracting values from JSON
+
+- Spark
+    - spark.read.json(path)
+    - with a pre-defined schema spark.read.schema(xxx).json(path)
+- SQL
+    - select xxx from openrowset(…)
+
+### Encoding and decoding data
+
+### Error handling for the transformation
+
+### Normalizing and denormalizing values
+
+- Flatten
+- Pivot (turn the values in the column into multiple columns, with some aggregation func)
+- Unpivot
+
+## Chapter 9 - Designing and Developing a Batch Processing Solution
+
+Batch process usually deals with larger amounts of data and takes more time to process compared to stream processing.
+
+5 major components:
+
+- storage system
+- process engine
+- orchestration tooling
+- analytical data store
+- BI tooling
+
+For ingestion, need to consider
+
+- Incremental data load
+- SCDs
+- Duplicate, missing data
+- Late arriving (More reading on this!)
+    - Drop the message: when the data is out of date, doesn’t add much value
+    - Store the message and retry after some time: store the early-arriving fact rows in a staging table and try inserting this fact when in the next iteration, hoping that the dimension will have arrived by then. Repeat this process a pre-determined number of times before declaring failure
+    - Insert a dummy record in the dimension table: If the corresponding dimension record doesn’t exist, just enter a dummy record in its place. Need to revisit all the dummy records and update them with real values once the dimension values arrive
+    - If we have enough details about the dimension, we can inder the dimension row and insert the new derived dimension row with a new surrogate key
+
+### Upsetting data
+
+- update
+- insert
+
+### Regressing to a previous state
+
+- When instructions fail or reach an inconsistent state then the entire transaction rolls back
+- ADF provides options for checking consistency and setting limits for fault tolerance
+- Delete activity for rollback (delete files, rows, so on)
+
+### Azure batch
+
+Azure service that can be sued to perform large-scale parallel batch processing. 
+
+- Batch size configuration
+- Resource scaling
+    - manual
+    - auto
+
+Best practices
+
+- Use private endpoints
+- Create pools in virtual networks
+- Create pools without public IP
+- Limit remote access to pool nodes by configuring firewalls
+- Encrypt data in transit by using https://
+- Encrypt Batch data at rest by using secret keys
+- Apply compliance and security policies
