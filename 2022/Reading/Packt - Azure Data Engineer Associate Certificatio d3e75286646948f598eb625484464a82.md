@@ -515,4 +515,56 @@ Best practices
         - processing rate
         - batch duration
 - Process time series data
-    -
+    - Data recorded continuously over time
+    - Appended heavily
+    - Timestamps
+        - Event time
+        - Processing time
+    - Windowed aggregates
+        - Since time series events are unbounded events, no well-defined end time, necessary to process the event in small batches
+    - Checkpointing or Watermarking
+        - Keep track of the last event or timestamp that was processed
+        - Ensure we start from the previously stopped place and don’t miss out any events
+    - Replay data
+        - Re-process older events, previous offset location
+- Windowed aggregates
+    - Tumbling windows
+        - non-overlapping
+        - same size
+    - Hopping windows
+        - fixed overlap
+        - same size
+    - Sliding windows
+        - fixed size
+        - only forward when either event add or remove
+    - Session windows
+        - pre-defined max size
+        - grab events as many as possible
+        - if no event, timeout and close
+    - Snapshot windows
+        - not really window tech
+        - used to get a snapshot of the event at a particular time
+- Configure checkpoints
+- Replay archived stream data (event hub default 7 days)
+- Transformation
+    - COUNT(DISTINCT xxx)
+    - CAST(xxx AS FLOAT)
+    - WHERE xxx LIKE ‘%123%’
+- Schema drift
+    - Azure schema register
+        - register
+        - retrieve
+    - Delta lake schema evolution
+        - .option(”mergeSchmea”, “true”)
+- Partitions
+    - distribute incoming events into multiple streams
+    - within one partition
+    - across partitions
+- Scaling resources
+    - Partitions
+    - Auto-inflate
+        - auto scale up feature
+        - as the usage increases, added more throughput units to the instance
+        
+
+## Chapter 11 - Managing batches and Pipelines
