@@ -568,3 +568,108 @@ Best practices
         
 
 ## Chapter 11 - Managing batches and Pipelines
+
+- Azure function - serverless
+    - only one trigger associated with it
+- Failed batch loads
+    - Pool errors
+        - Insufficient quota
+        - Insufficient resource in VNet
+        - Short timeouts
+    - Node errors
+        - Start task failures
+        - Application download failures
+        - Nodes going into a bad state
+    - Job errors
+    - Task errors
+- ADF validation
+    - Validation task
+    - Get metadata
+    - If condition
+- ADF trigger
+    - schedule
+    - tumbling window
+    - event-based
+        - built-in event, such as files being created in Blob or ADLS
+    - custom
+        - trigger pipelines based on events from Azure event grid. listen to topics in azure event grid and trigger pipelines based on certain messages or event occurring in the topic
+- Integration Runtime
+    - Azure IR
+        - Default
+        - Connect data store and compute service across public endpoints
+        - Copy data between Azure-hosted services
+        - Also support connect data stores using private links
+    - Self-hosted IR
+        - Copy data between on-premises clusters and Azure services
+        - On the machines or VMs on the on-premises private network to install a self-hosted IR
+    - SSIS IR
+        - Used for SSIS lift and shift uses cases
+
+## Chapter 12 - Designing Security for Data Policies and Standards
+
+- Sensitive information handling
+    - Data masking
+    - Row and column level security
+    - Role-based access
+    - Access-controlled lists
+    - Enable encryption
+- Encryption in transit
+    - Secure sockets layer (SSL)
+    - Transport layer security (TLS)
+- RBAC (Role-Based Access Control)
+    - Security principal
+        - user, group or managed identity (service accounts whose life cycle is completely managed by Azure) created within AAD
+        - as “who”
+        - it is the entity that we request permission for
+    - Role
+        - define what actions can be performed by a principal
+        - pre-defined roles
+    - Scope
+        - where the role needs to be applied
+            - resource group? or container in a storage account? or multiple containers? etc.
+- ACLs (Access Control Lists)
+    - while RBAC provides coarse-grained access
+    - ACLs offer more fine-grained access
+
+![Untitled](Packt%20-%20Azure%20Data%20Engineer%20Associate%20Certificatio%20d3e75286646948f598eb625484464a82/Untitled%202.png)
+
+(Azure gives precedence to RBAC)
+
+- Shared key
+    - gives admin-like access
+- Shared Access Signature (SAS token)
+    - define what actions are allowed
+
+Note: both these 2 methods will override RBAC and ACLs. Recommendation is to use AAD RBAC and ACLs wherever possible
+
+- Row and column level security
+    - Row level
+        - create function similar to where statement
+        - create security policy by passing the function
+    - Column level
+        - similar to data mask
+        - but instead of masking the column, restrict the column access completely to unauthorized users
+- Data retention policy
+    - Scheduled data deletion
+    - Data purging - remove data as per business requirements
+- Azure Active Directory (AAD)
+    - Azure’s identity and access management service
+    - Manage users, groups, service principals, and so on
+- Managed identities
+    - identities that are assigned to instance of Azure services such a VMs, Synapse, SQL DB, etc.
+    - life cycle automatically managed by AAD
+    - managed identity can be used by the instance to authenticate itself with AAD
+- Key valut
+    - Key
+    - Secrets
+    - Certificate
+- Secure endpoints
+    - public endpoint
+        - default way of creating Azure services, where the service can be accessed from a public IP address
+        - any resources we created in Azure without configuring a VNet will go into public endpoint category
+    - private endpoint
+        - more secure with private IP
+        - private link - make azure service available only on certain private IP addresses within VNets
+        - no one outside the VNets will even aware the existence of such a service
+
+## Chapter 13 - Monitoring Data Storage and Data Processing
