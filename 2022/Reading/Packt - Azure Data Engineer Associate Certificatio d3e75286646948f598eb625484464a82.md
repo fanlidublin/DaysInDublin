@@ -673,3 +673,113 @@ Note: both these 2 methods will override RBAC and ACLs. Recommendation is to use
         - no one outside the VNets will even aware the existence of such a service
 
 ## Chapter 13 - Monitoring Data Storage and Data Processing
+
+- Azure monitor
+    - Record 2 types of data
+        - metrics
+        - logs
+    - Azure log analytics workspaces
+
+## Chapter 14 - Optimizing and Troubleshooting Data Storage and Data Processing
+
+- Compact small files
+    - wildcard file path
+    - sink → copy behavior → merge files
+    - incrementally loading
+    - bin packing(Delta lake)
+        - delta.autoOptimize.optimizeWrite = true
+        - delta.autoOptimize.autoCompact = true
+- UDFs
+- Handle skews in data
+    - storage level
+        - Better distribution or partition strategy that would balance the data evenly
+        - Add a second distribution key
+        - Randomize the data and then use the round-robin technique to distribute the data evenly
+    - compute level
+        - improve the query plan by enabling statistics
+            - query engines such as the Synapse SQL engine, which uses a cost-based optimizer, will utilize statistics to generate the most optimal plan based on the cost associated with each plan
+            - optimizer can identify data skews and automatically apply the appropriate optimizations in place to handle skew
+        - ignore the outlier data if not significant
+- Handle data spills
+    - Refers to the process where compute engine usable to hold the required data in memory and writes(spills) to disk
+    - Cause increase query execution time due to expensive disk reads and writes
+    - why occur
+        - data partition size is too big
+        - compute resources is small, especially memory
+        - the exploded data size during merge, union, exceeds the memory limits of the compute node
+    - solution
+        - increase compute capacity, especially memory if possible
+        - reduce data partition size, repartition if necessary
+        - remove skews in data
+- Tune shuffle partitions
+    - move data between its executors or nodes while perform operations such as join, union, groupby and reduceby
+    - by default 200 partitions
+- Tune query by using indexers
+    - Clustered columnstore index
+        - default index option for Synapse SQL
+        - table > 100 mission rows
+        - provide high levels of data compression and good overall performance
+    - Cluster index
+        - better for specific filter conditions
+        - < 100 mission rows
+    - Help index
+        - temporary staging tables to quickly load data
+        - small lookup tables
+- Hyperspace for Spark index
+    - in query plan, the file scan will read the Hyperspace indexed file instead of the original Parquet
+- Tune query by using cache
+    - result set caching (max size 1 TB per DB)
+    - spark - cache in memory
+        - cache()
+        - persiste()
+- OLTP
+    - build for efficiently process, store and query transactions
+    - central ACID-compliant DB
+    - normalized data that adheres to strict schemas
+    - Relatively small in data size (gigabytes or terabytes)
+    - RDBMS based systems
+- OLAP
+    - Big data system that typically have a warehouse or key value based store as the central technology to perform analytical processing
+    - Large in data size (terabytes, petabytes and above)
+    - Storage are usually column-based
+    - Fir data exploration, generating insights from historical data
+- HTAP (Hybrid Transactional Analytical Processing)
+    - handle both transactional and analytical processing
+    - combine row and column based storage to provide a hybrid functionality
+- Optimizations
+    - Common optimizations
+        - Storage
+            - Divide data clearly into zones: Bronze, Silver, Golden
+            - Define a good directory structure, organized around dates
+            - Partition data based on access to different directories and different storage tiers
+            - Choose the right format - for example, Parquet with a Snappy comparison works well for Spark
+            - Configure the data life cycle, purging old data or moving it to archive tiers
+        - Compute
+            - Cache
+            - Index
+            - Handle data spills
+            - Handle data skews
+            - Tune query based on query execution plan
+    - Specific optimizations
+        - Synapse SQL
+            - Maintain statistics to improve performance while using Synapse SQL’s cost-based optimizer
+            - Use PolyBase to load data faster
+            - Use hash distribution for large tables
+            - Use temporary staging heap tables for transient data
+            - Do not over-partition as Synapse SQL already partitions the data into 60 sub-partitions
+            - Minimize transaction size
+            - Reduce query result size
+            - Use result set cache
+            - Use the smallest possible column size
+            - Trade-off
+                - Larger resource class (memory size) to improve query performance
+                - Smaller resource class (smaller memory size) to increase concurrency
+        - Spark
+            - Choose the right data abstraction - DF and datasets usually work better than RDDs
+            - Right data format - Parquet with a Snappy comparison works well for Spark
+            - Cache - either the inbuilt ones in Spark, cache() persist() or external cache libraries
+            - Index - Hyperspace
+            - Tune query
+                - Reduce shuffles in the query plan and choose the right merge
+            - Optimize job execution
+                - Right container sizes to jobs don’t run out of memory (can usually be done by observing the logs for the details of previous runs)
